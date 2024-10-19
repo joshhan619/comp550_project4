@@ -49,8 +49,9 @@ void pendulumODE(const ompl::control::ODESolver::StateType &q, const ompl::contr
                  ompl::control::ODESolver::StateType &qdot)
 {
     // Fill in the ODE for the pendulum's dynamics
-    qdot[0] = q[1];
+    qdot.resize(q.size(), 0);
     double tau = control->as<oc::RealVectorControlSpace::ControlType>()->values[0];
+    qdot[0] = q[1];
     qdot[1] = -9.81*cos(q[0])+tau;
 }
 
@@ -77,24 +78,24 @@ ompl::control::SimpleSetupPtr createPendulum(double torque)
     // Create pendulum's control space
     auto cspace(std::make_shared<oc::RealVectorControlSpace>(space, 1));
 
-    ob::RealVectorBounds control_bounds(1);
-    bounds.setLow(-torque);
-    bounds.setHigh(torque);
-    cspace->setBounds(control_bounds);
+    ob::RealVectorBounds cbounds(1);
+    cbounds.setLow(-torque);
+    cbounds.setHigh(torque);
+    cspace->setBounds(cbounds);
 
     // Create SimpleSetup and add state space and control space
     auto ss (std::make_shared<oc::SimpleSetup>(cspace));
 
     // Add validity checker
-    oc::SpaceInformationPtr si = ss->getSpaceInformation();
+    oc::SpaceInformation *si = ss->getSpaceInformation().get();
     ss->setStateValidityChecker([si](const ob::State *state)
     { 
         return si->satisfiesBounds(state);
     });
 
     // Add state propagator
-    ompl::control::ODESolverPtr odeSolver (new ompl::control::ODEBasicSolver<> (si, &pendulumODE));
-    ss->getSpaceInformation()->setStatePropagator(ompl::control::ODESolver::getStatePropagator(odeSolver, &postPropagate));
+    oc::ODESolverPtr odeSolver (new oc::ODEBasicSolver<> (ss->getSpaceInformation(), &pendulumODE));
+    si->setStatePropagator(oc::ODESolver::getStatePropagator(odeSolver, &postPropagate));
 
     ob::ScopedState<ob::CompoundStateSpace> start(space);
     start[0] = -M_PI/2;
@@ -104,7 +105,7 @@ ompl::control::SimpleSetupPtr createPendulum(double torque)
     goal[0] = M_PI/2;
     goal[1] = 0;
 
-    ss->setStartAndGoalStates(start, goal, 0.05);
+    ss->setStartAndGoalStates(start, goal);
 
     return ss;
 }
@@ -129,11 +130,12 @@ void planPendulum(ompl::control::SimpleSetupPtr &ss, int choice)
     }
     ss->setPlanner(planner);
     ss->setup();
-    ob::PlannerStatus solved = ss->solve(1);
+    ob::PlannerStatus solved = ss->solve(60);
 
     if (solved) {
         std::cout << "Found solution:" << std::endl;
         ss->getSolutionPath().print(std::cout);
+        ss->getSolutionPath().asGeometric().printAsMatrix(std::cout);
     }
 }
 
