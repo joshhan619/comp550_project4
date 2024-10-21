@@ -42,7 +42,13 @@ def visualize_pendulum(data1, data2, data3, planner):
 
 if __name__ == '__main__':
     planner = 'RRT'
-    data1 = read_geometric_path("pendulum_t3.txt")
-    data2 = read_geometric_path("pendulum_t5.txt")
-    data3 = read_geometric_path("pendulum_t10.txt")
+    data1 = read_geometric_path(f"{planner}_pendulum_t3.txt")
+    data2 = read_geometric_path(f"{planner}_pendulum_t5.txt")
+    data3 = read_geometric_path(f"{planner}_pendulum_t10.txt")
     visualize_pendulum(data1, data2, data3, planner)
+
+    planner = 'KPIECE'
+    data4 = read_geometric_path(f"{planner}_pendulum_t3.txt")
+    data5 = read_geometric_path(f"{planner}_pendulum_t5.txt")
+    data6 = read_geometric_path(f"{planner}_pendulum_t10.txt")
+    visualize_pendulum(data4, data5, data6, planner)

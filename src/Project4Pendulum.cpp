@@ -35,13 +35,15 @@ public:
 
     unsigned int getDimension() const override
     {
-        // TODO:
         return 2;
     }
 
-    void project(const ompl::base::State */* state */, Eigen::Ref<Eigen::VectorXd> /* projection */) const override
+    void project(const ompl::base::State *state, Eigen::Ref<Eigen::VectorXd> projection) const override
     {
-        // TODO: Your projection for the pendulum
+        const double theta = state->as<ob::CompoundStateSpace::StateType>()->as<ob::SO2StateSpace::StateType>(0)->value;
+        const double omega = state->as<ob::CompoundStateSpace::StateType>()->as<ob::RealVectorStateSpace::StateType>(1)->values[0];
+        projection(0) = sin(theta);
+        projection(1) = omega;
     }
 };
 
