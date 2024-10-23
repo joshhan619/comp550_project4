@@ -232,6 +232,7 @@ void planCar(ompl::control::SimpleSetupPtr & ss , int choice )
 
     if (solved && ss->getSolutionPath().getStateCount() > 0) {
         ss->getSolutionPath().print(std::cout);
+        ss->getSolutionPath().asGeometric().printAsMatrix(std::cout);
     }
 }
 
