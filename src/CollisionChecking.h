@@ -32,6 +32,6 @@ AABB rectangleToAABB(const Rectangle &obstacle);
 
 // Tests if state is valid (for a point robot)
 bool isValidStatePoint(const ompl::base::State* state, const std::vector<Rectangle>& obstacles);
-
+bool isValidPoint(double x, double y, const std::vector<Rectangle>& obstacles);
 // Tests if state is valid (for a square robot)
 bool isValidStateSquare(const ompl::base::State* state, double sideLen, const std::vector<Rectangle>& obstacles);
