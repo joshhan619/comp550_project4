@@ -42,7 +42,7 @@ public:
     {
         const double theta = state->as<ob::CompoundStateSpace::StateType>()->as<ob::SO2StateSpace::StateType>(0)->value;
         const double omega = state->as<ob::CompoundStateSpace::StateType>()->as<ob::RealVectorStateSpace::StateType>(1)->values[0];
-        projection(0) = sin(theta);
+        projection(0) = theta;
         projection(1) = omega;
     }
 };
@@ -107,7 +107,7 @@ ompl::control::SimpleSetupPtr createPendulum(double torque)
     goal[0] = M_PI/2;
     goal[1] = 0;
 
-    ss->setStartAndGoalStates(start, goal);
+    ss->setStartAndGoalStates(start, goal, 0.1);
 
     return ss;
 }
