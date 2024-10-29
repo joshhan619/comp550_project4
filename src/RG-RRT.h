@@ -146,7 +146,7 @@ namespace ompl
             std::vector<Control *> R_control_;
 
             /** \brief Time duration to propagate R(q) */
-            double t_{1};
+            int t_{1};
         };
     }
 }

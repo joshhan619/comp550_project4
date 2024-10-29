@@ -224,7 +224,7 @@ void planCar(ompl::control::SimpleSetupPtr & ss , int choice )
         space->registerDefaultProjection(ob::ProjectionEvaluatorPtr(new CarProjection(space)));
     } else if (choice == 3) {
         // Use RG-RRT
-        // planner = std::make_shared<oc::RGRRT>(ss->getSpaceInformation());
+        planner = std::make_shared<oc::RGRRT>(ss->getSpaceInformation());
     }
     ss->setPlanner(planner);
     ss->setup();
