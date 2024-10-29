@@ -132,7 +132,7 @@ void planPendulum(ompl::control::SimpleSetupPtr &ss, int choice)
     }
     ss->setPlanner(planner);
     ss->setup();
-    ob::PlannerStatus solved = ss->solve(60);
+    ob::PlannerStatus solved = ss->solve(120);
 
     if (solved) {
         std::cout << "Found solution:" << std::endl;
