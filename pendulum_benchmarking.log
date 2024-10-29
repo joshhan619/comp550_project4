@@ -1,0 +1,270 @@
+OMPL version 1.5.2
+Experiment Project 4b Pendulum
+0 experiment properties
+Running on 673633625c35
+Starting at 2024-10-29 21:11:46
+<<<|
+Properties of the state space 'CompoundSpace0'
+  - signature: 6 0 2 2 1 1 1 
+  - dimension: 2
+  - extent: 23.1416
+  - sanity checks for state space passed
+  - probability of valid states: 1
+  - average length of a valid motion: 8.99532
+  - average number of samples drawn per second: sampleUniform()=1.4563e+07 sampleUniformNear()=1.94647e+07 sampleGaussian()=9.12542e+06
+Settings for the state space 'CompoundSpace0'
+  - state validity check resolution: 1%
+  - valid segment count factor: 1
+  - state space:
+Compound state space 'CompoundSpace0' of dimension 2 [
+SO2 state space 'SO2Space1'
+ of weight 1
+Real vector state space 'RealVectorSpace2' of dimension 1 with bounds: 
+  - min: -10 
+  - max: 10 
+ of weight 1
+]
+Registered projections:
+  - <default>
+Projection of dimension 2
+Cell sizes (inferred by sampling): [0.330984 1.07918]
+
+Declared parameters:
+longest_valid_segment_fraction = 0.01
+max_control_duration = 10
+min_control_duration = 1
+projection.cellsize.0 = 0.330984
+projection.cellsize.1 = 1.07918
+projection.cellsize_factor = 0
+propagation_step_size = 0.231416
+valid_segment_count_factor = 1
+Valid state sampler named uniform with parameters:
+nr_attempts = 100
+  - control space:
+Real vector control space 'RealVectorControl[CompoundSpace0]' with bounds: 
+  - min: -3 
+  - max: 3 
+  - can propagate backward: yes
+  - propagation step size: 0.231416
+  - propagation duration: [1, 10]
+Start states:
+Compound state [
+SO2State [-1.5708]
+RealVectorState [0]
+]
+Goal state, threshold = 0.1, memory address = 0xaaaade4cccb0, state = 
+Compound state [
+SO2State [1.5708]
+RealVectorState [0]
+]
+OptimizationObjective = nullptr
+There are 0 solutions
+
+Properties of benchmarked planners:
+Planner RRT specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias intermediate_states
+Planner KPIECE1 specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: bad_score_factor border_fraction goal_bias good_score_factor max_close_samples
+|>>>
+<<<|
+Architecture:                         aarch64
+CPU op-mode(s):                       64-bit
+Byte Order:                           Little Endian
+CPU(s):                               8
+On-line CPU(s) list:                  0-7
+Thread(s) per core:                   1
+Core(s) per socket:                   8
+Socket(s):                            1
+Vendor ID:                            0x61
+Model:                                0
+Stepping:                             0x0
+BogoMIPS:                             48.00
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:             Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+Flags:                                fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+|>>>
+10953608343277866 is the random seed
+60 seconds per run
+10000 MB per run
+50 runs per planner
+5.18893 seconds spent to collect the data
+1 enum type
+status|Unknown status|Invalid start|Invalid goal|Unrecognized goal type|Timeout|Approximate solution|Exact solution|Crash|Unknown status|Unknown status
+2 planners
+control_RRT
+10 common properties
+goal_bias = 0.05
+intermediate_states = 0
+longest_valid_segment_fraction = 0.01
+max_control_duration = 10
+min_control_duration = 1
+projection.cellsize.0 = 0.330984
+projection.cellsize.1 = 1.07918
+projection.cellsize_factor = 0
+propagation_step_size = 0.231416
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+50 runs
+0; 1; 1261; 1262; 7.88281; 0; 0; 11.8022; 16; 1; 6; 0.0246193; 0; 
+0; 1; 2679; 2680; 8.4375; 0; 0; 18.0504; 18; 1; 6; 0.0383341; 0; 
+0; 1; 4528; 4529; 9.18359; 0; 0; 22.9102; 19; 1; 6; 0.0501013; 0; 
+0; 1; 12962; 12963; 11.543; 0; 0; 16.4305; 13; 1; 6; 0.142024; 0; 
+0; 1; 3034; 3035; 14.7305; 0; 0; 15.5049; 19; 1; 6; 0.0318612; 0; 
+0; 1; 933; 934; 14.7305; 0; 0; 15.5049; 14; 1; 6; 0.0102818; 0; 
+0; 1; 2146; 2147; 14.7305; 0; 0; 21.9845; 18; 1; 6; 0.0219425; 0; 
+0; 1; 1215; 1216; 14.7305; 0; 0; 18.0504; 19; 1; 6; 0.0120917; 0; 
+0; 1; 159; 160; 14.7305; 0; 0; 8.56239; 7; 1; 6; 0.00190225; 0; 
+0; 1; 2346; 2347; 14.7305; 0; 0; 22.2159; 21; 1; 6; 0.025983; 0; 
+0; 1; 1374; 1375; 14.7305; 0; 0; 24.5301; 22; 1; 6; 0.0157657; 0; 
+0; 1; 1107; 1108; 14.7305; 0; 0; 19.4389; 21; 1; 6; 0.0120215; 0; 
+0; 1; 3292; 3293; 14.7305; 0; 0; 17.5876; 19; 1; 6; 0.0361003; 0; 
+0; 1; 12722; 12723; 14.7305; 0; 0; 16.1991; 20; 1; 6; 0.138136; 0; 
+0; 1; 11310; 11311; 15.3555; 0; 0; 21.0588; 16; 1; 6; 0.128229; 0; 
+0; 1; 903; 904; 15.3555; 0; 0; 17.5876; 14; 1; 6; 0.00939479; 0; 
+0; 1; 3614; 3615; 15.3555; 0; 0; 11.3394; 13; 1; 6; 0.0414595; 0; 
+0; 1; 8793; 8794; 15.3555; 0; 0; 20.1332; 19; 1; 6; 0.0959397; 0; 
+0; 1; 4947; 4948; 15.3555; 0; 0; 16.1991; 18; 1; 6; 0.0543321; 0; 
+0; 1; 591; 592; 15.3555; 0; 0; 16.8934; 15; 1; 6; 0.00762671; 0; 
+0; 1; 3412; 3413; 15.3555; 0; 0; 18.7447; 19; 1; 6; 0.0364265; 0; 
+0; 1; 1477; 1478; 15.3555; 0; 0; 13.6535; 15; 1; 6; 0.0160073; 0; 
+0; 1; 6975; 6976; 15.3555; 0; 0; 24.5301; 21; 1; 6; 0.0760607; 0; 
+0; 1; 10020; 10021; 15.3555; 0; 0; 14.5792; 14; 1; 6; 0.110189; 0; 
+0; 1; 5443; 5444; 15.3555; 0; 0; 6.71106; 10; 1; 6; 0.0599404; 0; 
+0; 1; 2992; 2993; 15.3555; 0; 0; 15.2735; 17; 1; 6; 0.0323669; 0; 
+0; 1; 1491; 1492; 15.3555; 0; 0; 26.8442; 24; 1; 6; 0.0162803; 0; 
+0; 1; 3785; 3786; 15.3555; 0; 0; 16.4305; 17; 1; 6; 0.0398753; 0; 
+0; 1; 3405; 3406; 15.3555; 0; 0; 26.3814; 21; 1; 6; 0.0359267; 0; 
+0; 1; 10754; 10755; 15.3555; 0; 0; 24.9929; 24; 1; 6; 0.12032; 0; 
+0; 1; 1792; 1793; 15.3555; 0; 0; 18.5133; 18; 1; 6; 0.0203933; 0; 
+0; 1; 1249; 1250; 15.3555; 0; 0; 26.6128; 21; 1; 6; 0.013773; 0; 
+0; 1; 2934; 2935; 15.3555; 0; 0; 23.1416; 21; 1; 6; 0.0321204; 0; 
+0; 1; 10541; 10542; 15.3555; 0; 0; 17.819; 21; 1; 6; 0.118242; 0; 
+0; 1; 1775; 1776; 15.3555; 0; 0; 21.9845; 19; 1; 6; 0.0201349; 0; 
+0; 1; 3628; 3629; 15.3555; 0; 0; 17.5876; 16; 1; 6; 0.0396359; 0; 
+0; 1; 418; 419; 15.3555; 0; 0; 25.9186; 20; 1; 6; 0.00405787; 0; 
+0; 1; 4172; 4173; 15.3555; 0; 0; 16.4305; 17; 1; 6; 0.0454422; 0; 
+0; 1; 9110; 9111; 15.3555; 0; 0; 19.9018; 23; 1; 6; 0.0980094; 0; 
+0; 1; 13878; 13879; 15.3555; 0; 0; 21.2903; 24; 1; 6; 0.160206; 0; 
+0; 1; 1731; 1732; 16.1055; 0; 0; 22.6788; 18; 1; 6; 0.0180396; 0; 
+0; 1; 296; 297; 16.1055; 0; 0; 23.1416; 18; 1; 6; 0.00374463; 0; 
+0; 1; 4919; 4920; 16.1055; 0; 0; 14.1164; 18; 1; 6; 0.0545579; 0; 
+0; 1; 11957; 11958; 16.1055; 0; 0; 18.0504; 17; 1; 6; 0.134235; 0; 
+0; 1; 13160; 13161; 16.4805; 0; 0; 37.9522; 29; 1; 6; 0.149399; 0; 
+0; 1; 11732; 11733; 16.4805; 0; 0; 12.9593; 14; 1; 6; 0.131494; 0; 
+0; 1; 495; 496; 16.4805; 0; 0; 13.1907; 15; 1; 6; 0.00599337; 0; 
+0; 1; 2233; 2234; 16.4805; 0; 0; 32.3982; 23; 1; 6; 0.0255822; 0; 
+0; 1; 1737; 1738; 16.4805; 0; 0; 28.4642; 21; 1; 6; 0.01962; 0; 
+0; 1; 5306; 5307; 16.4805; 0; 0; 21.7531; 18; 1; 6; 0.0576129; 0; 
+.
+control_KPIECE1
+13 common properties
+bad_score_factor = 0.45
+border_fraction = 0.8
+goal_bias = 0.05
+good_score_factor = 0.9
+longest_valid_segment_fraction = 0.01
+max_close_samples = 30
+max_control_duration = 10
+min_control_duration = 1
+projection.cellsize.0 = 0.330984
+projection.cellsize.1 = 1.07918
+projection.cellsize_factor = 0
+propagation_step_size = 0.231416
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+50 runs
+0; 1; 1797; 1798; 16.4805; 0; 0; 20.1332; 77; 1; 6; 0.0136366; 0; 
+0; 1; 3647; 3648; 16.4805; 0; 0; 13.1907; 54; 1; 6; 0.0457133; 0; 
+0; 1; 1020; 1021; 16.4805; 0; 0; 12.4965; 51; 1; 6; 0.00386433; 0; 
+0; 1; 1947; 1948; 16.4805; 0; 0; 17.1248; 69; 1; 6; 0.0124621; 0; 
+0; 1; 880; 881; 16.4805; 0; 0; 12.0336; 46; 1; 6; 0.00381162; 0; 
+0; 1; 1238; 1239; 16.4805; 0; 0; 13.1907; 53; 1; 6; 0.00644562; 0; 
+0; 1; 2132; 2133; 16.4805; 0; 0; 16.6619; 65; 1; 6; 0.0182807; 0; 
+0; 1; 4452; 4453; 16.4805; 0; 0; 16.1991; 66; 1; 6; 0.075631; 0; 
+0; 1; 368; 369; 16.4805; 0; 0; 9.95088; 38; 1; 6; 0.00143292; 0; 
+0; 1; 4874; 4875; 16.4805; 0; 0; 14.5792; 57; 1; 6; 0.0800014; 0; 
+0; 1; 2608; 2609; 16.4805; 0; 0; 16.1991; 64; 1; 6; 0.0262009; 0; 
+0; 1; 4420; 4421; 16.4805; 0; 0; 13.1907; 55; 1; 6; 0.081379; 0; 
+0; 1; 1609; 1610; 16.4805; 0; 0; 20.1332; 84; 1; 6; 0.00967046; 0; 
+0; 1; 769; 770; 16.4805; 0; 0; 17.3562; 65; 1; 6; 0.00411563; 0; 
+0; 1; 2199; 2200; 16.4805; 0; 0; 10.8765; 44; 1; 6; 0.0224944; 0; 
+0; 1; 8462; 8463; 16.4805; 0; 0; 21.9845; 92; 1; 6; 0.183496; 0; 
+0; 1; 3453; 3454; 16.4805; 0; 0; 9.48805; 37; 1; 6; 0.0516721; 0; 
+0; 1; 492; 493; 16.4805; 0; 0; 24.2987; 90; 1; 6; 0.00183246; 0; 
+0; 1; 2474; 2475; 16.4805; 0; 0; 13.4221; 56; 1; 6; 0.0277382; 0; 
+0; 1; 6097; 6098; 16.4805; 0; 0; 20.8274; 86; 1; 6; 0.117383; 0; 
+0; 1; 3091; 3092; 16.4805; 0; 0; 15.2735; 62; 1; 6; 0.0319565; 0; 
+0; 1; 949; 950; 16.4805; 0; 0; 22.6788; 83; 1; 6; 0.00415463; 0; 
+0; 1; 611; 612; 16.4805; 0; 0; 13.1907; 54; 1; 6; 0.00340262; 0; 
+0; 1; 1877; 1878; 16.4805; 0; 0; 8.79381; 35; 1; 6; 0.0132875; 0; 
+0; 1; 1571; 1572; 16.4805; 0; 0; 14.1164; 59; 1; 6; 0.00788837; 0; 
+0; 1; 4530; 4531; 16.4805; 0; 0; 20.596; 84; 1; 6; 0.0742359; 0; 
+0; 1; 8174; 8175; 16.4805; 0; 0; 24.2987; 101; 1; 6; 0.17033; 0; 
+0; 1; 634; 635; 16.4805; 0; 0; 12.7279; 52; 1; 6; 0.003641; 0; 
+0; 1; 7786; 7787; 16.4805; 0; 0; 26.8442; 106; 1; 6; 0.165499; 0; 
+0; 1; 2296; 2297; 16.4805; 0; 0; 10.6451; 42; 1; 6; 0.0214191; 0; 
+0; 1; 2728; 2729; 16.4805; 0; 0; 11.108; 44; 1; 6; 0.0338955; 0; 
+0; 1; 1013; 1014; 16.4805; 0; 0; 14.1164; 53; 1; 6; 0.00327708; 0; 
+0; 1; 19248; 19249; 16.4805; 0; 0; 20.1332; 71; 1; 6; 0.479527; 0; 
+0; 1; 1427; 1428; 17.9102; 0; 0; 12.4965; 49; 1; 6; 0.00807179; 0; 
+0; 1; 2736; 2737; 17.9102; 0; 0; 17.5876; 73; 1; 6; 0.0272953; 0; 
+0; 1; 2299; 2300; 17.9102; 0; 0; 13.4221; 51; 1; 6; 0.019252; 0; 
+0; 1; 2033; 2034; 17.9102; 0; 0; 12.4965; 48; 1; 6; 0.0179021; 0; 
+0; 1; 4483; 4484; 17.9102; 0; 0; 7.17389; 29; 1; 6; 0.075683; 0; 
+0; 1; 2378; 2379; 17.9102; 0; 0; 15.2735; 64; 1; 6; 0.0235522; 0; 
+0; 1; 416; 417; 17.9102; 0; 0; 13.6535; 50; 1; 6; 0.00145308; 0; 
+0; 1; 3239; 3240; 17.9102; 0; 0; 12.9593; 47; 1; 6; 0.0458452; 0; 
+0; 1; 7556; 7557; 17.9102; 0; 0; 16.1991; 66; 1; 6; 0.166179; 0; 
+0; 1; 4369; 4370; 17.9102; 0; 0; 18.2819; 71; 1; 6; 0.0678843; 0; 
+0; 1; 3191; 3192; 17.9102; 0; 0; 14.8106; 62; 1; 6; 0.0453032; 0; 
+0; 1; 1661; 1662; 17.9102; 0; 0; 15.9677; 66; 1; 6; 0.0123335; 0; 
+0; 1; 1660; 1661; 17.9102; 0; 0; 13.6535; 52; 1; 6; 0.00990875; 0; 
+0; 1; 2184; 2185; 17.9102; 0; 0; 10.1823; 43; 1; 6; 0.0160095; 0; 
+0; 1; 1928; 1929; 17.9102; 0; 0; 22.4473; 86; 1; 6; 0.0155866; 0; 
+0; 1; 1068; 1069; 17.9102; 0; 0; 8.33097; 33; 1; 6; 0.00402658; 0; 
+0; 1; 1716; 1717; 17.9102; 0; 0; 17.819; 71; 1; 6; 0.00820196; 0; 
+.

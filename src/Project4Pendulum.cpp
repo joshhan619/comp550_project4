@@ -16,7 +16,7 @@
 #include <ompl/base/spaces/RealVectorStateSpace.h>
 #include <ompl/control/planners/kpiece/KPIECE1.h>
 #include <ompl/control/planners/rrt/RRT.h>
-
+#include <ompl/tools/benchmark/Benchmark.h>
 #include <cmath>
 
 // Your implementation of RG-RRT
@@ -141,9 +141,26 @@ void planPendulum(ompl::control::SimpleSetupPtr &ss, int choice)
     }
 }
 
-void benchmarkPendulum(ompl::control::SimpleSetupPtr &/* ss */)
+void benchmarkPendulum(ompl::control::SimpleSetupPtr & ss )
 {
     // TODO: Do some benchmarking for the pendulum
+    ompl::tools::Benchmark b(*ss, "Project 4b Pendulum");
+
+    ob::StateSpace *space = ss->getStateSpace().get();
+    space->registerDefaultProjection(ob::ProjectionEvaluatorPtr(new PendulumProjection(space)));
+    // Add benchmark planners
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
+    
+    // Create a benchmark request
+    ompl::tools::Benchmark::Request req;
+    req.maxTime = 60.0;
+    req.maxMem = 10000.0;
+    req.runCount = 50;
+    req.displayProgress = true;
+    b.benchmark(req);
+
+    b.saveResultsToFile("pendulum_benchmarking.log");
 }
 
 int main(int /* argc */, char ** /* argv */)
