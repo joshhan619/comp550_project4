@@ -58,13 +58,12 @@ void ompl::control::RGRRT::clear()
     Planner::clear();
     sampler_.reset();
     controlSampler_.reset();
+    // Clear R_control_ vector
+    R_control_.clear();
     freeMemory();
     if (nn_)
         nn_->clear();
     lastGoalMotion_ = nullptr;
-
-    // Clear R_control_ vector
-    R_control_.clear();
 }
 
 void ompl::control::RGRRT::freeMemory()
@@ -84,6 +83,10 @@ void ompl::control::RGRRT::freeMemory()
     }
 
     // Free R_control_ vector memory
+    for (auto control : R_control_) {
+        siC_->freeControl(control);
+    }
+
     std::vector<Control *>().swap(R_control_);
 }
 
@@ -146,10 +149,28 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
         /* find closest state in the tree */
         Motion *nmotion = nn_->nearest(rmotion);
 
-        /* Calculate R(q) and find if a state in R(q) is closer to the random state than nmotion*/
-        // for(const ompl::control::Control *control : R_control_) {
-        //     R_control_.
-        // }
+        /* Calculate R(q_near) and find if a state in R(q_near) is closer to the random state than q_near*/
+        double dist = distanceFunction(nmotion, rmotion);
+        bool isReachable = false;
+        for(const ompl::control::Control *control : R_control_) {
+
+            auto *rgmotion = new Motion(siC_);
+            siC_->propagate(nmotion->state, control, t_, rgmotion->state);
+
+             
+            if (dist > distanceFunction(rgmotion, rmotion)) {
+                /* A state in R(q_near) is found to be closer to the random state than q_near.
+                   We add q_near to the tree.
+                */
+                isReachable = true;
+                break;
+            }
+        }
+
+        if (!isReachable) {
+            /* None of the states in R(q_near) were found to be closer to the random state. We discard q_near and try again*/
+            continue;
+        }
 
         /* sample a random control that attempts to go towards the random state, and also sample a control duration */
         unsigned int cd = controlSampler_->sampleTo(rctrl, nmotion->control, nmotion->state, rmotion->state);
