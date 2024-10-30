@@ -240,77 +240,6 @@ void planCar(ompl::control::SimpleSetupPtr & ss , int choice )
 void benchmarkCar(ompl::control::SimpleSetupPtr & ss )
 {
     // TODO: Do some benchmarking for the car
- /* auto space = std::make_shared<ob::CompoundStateSpace>();
-
-    auto se2_space = std::make_shared<ob::SE2StateSpace>();
-    auto velocity_space = std::make_shared<ob::RealVectorStateSpace>(1);
-    space->addSubspace(se2_space, 1.0);
-    space->addSubspace(velocity_space, 1.0);
-    
-
-    ob::RealVectorBounds se2_bounds(2);  
-    se2_bounds.setLow(0, -6);  
-    se2_bounds.setHigh(0, 6);  //x
-    se2_bounds.setLow(1, -10);  
-    se2_bounds.setHigh(1, 10);  //y
-    se2_bounds.setLow(2, -M_PI);  //  yaw
-    se2_bounds.setHigh(2, M_PI);  //  yaw
-    se2_space->setBounds(se2_bounds);
-
-    ob::RealVectorBounds velocity_bounds(1);  // Velocity 
-    velocity_bounds.setLow(-5);  
-    velocity_bounds.setHigh(5);  
-    velocity_space->setBounds(velocity_bounds);
-
-     // create a control space
-    auto cspace = std::make_shared<oc::RealVectorControlSpace>(space, 2);
-  
-     // set the bounds for the control space
-    ob::RealVectorBounds cbounds(2);
-    cbounds.setLow(-1);
-    cbounds.setHigh(1);
-  
-    cspace->setBounds(cbounds);
-  
-     // define a simple setup class
-    auto ss (std::make_shared<oc::SimpleSetup>(cspace));
-  
-      // Add validity checker
-    oc::SpaceInformation *si = ss->getSpaceInformation().get();
-
-    ss->setStateValidityChecker([si, &obstacles](const ob::State *state) 
-    { 
-        const auto *compoundState = state->as<ob::CompoundStateSpace::StateType>();
-        const auto *se2State = compoundState->as<ob::SE2StateSpace::StateType>(0);
-
-        double x = se2State->getX();
-        double y = se2State->getY();
-        // Check if the state satisfies bounds and is valid regarding obstacles
-        return si->satisfiesBounds(state) && isValidPoint(x,y, obstacles);
-       // return si->satisfiesBounds(state) ;
-    });
-
-
-    // Add state propagator
-    oc::ODESolverPtr odeSolver (new oc::ODEBasicSolver<> (ss->getSpaceInformation(), &carODE));
-    si->setStatePropagator(oc::ODESolver::getStatePropagator(odeSolver, &postPropagate));
-
-    ob::ScopedState<ob::CompoundStateSpace> start(space);
-    start->as<ob::RealVectorStateSpace::StateType>(1)->values[0] = 0;  // Set initial velocity
-    auto *se2_start = start->as<ob::SE2StateSpace::StateType>(0); 
-    se2_start->setX(-5);
-    se2_start->setY(-5);
-    se2_start->setYaw(0);
-
-    ob::ScopedState<ob::CompoundStateSpace> goal(space);
-    goal->as<ob::RealVectorStateSpace::StateType>(1)->values[0] = 0;  // Goal velocity
-    auto *se2_goal = goal->as<ob::SE2StateSpace::StateType>(0);
-    se2_goal->setX(4);
-    se2_goal->setY(5);
-    se2_goal->setYaw(0);
-
-    ss->setStartAndGoalStates(start, goal,1);
-**/
     ompl::tools::Benchmark b(*ss, "Project 4b Car");
 
     ob::StateSpace *space = ss->getStateSpace().get();
@@ -318,10 +247,10 @@ void benchmarkCar(ompl::control::SimpleSetupPtr & ss )
     // Add benchmark planners
     b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
     b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
-    
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RGRRT>(ss->getSpaceInformation())));
     // Create a benchmark request
     ompl::tools::Benchmark::Request req;
-    req.maxTime = 60.0;
+    req.maxTime = 120.0;
     req.maxMem = 10000.0;
     req.runCount = 50;
     req.displayProgress = true;

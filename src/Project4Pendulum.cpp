@@ -149,14 +149,14 @@ void benchmarkPendulum(ompl::control::SimpleSetupPtr & ss )
     ob::StateSpace *space = ss->getStateSpace().get();
     space->registerDefaultProjection(ob::ProjectionEvaluatorPtr(new PendulumProjection(space)));
     // Add benchmark planners
-    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
-    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
-    
+    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
+    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RGRRT>(ss->getSpaceInformation())));
     // Create a benchmark request
     ompl::tools::Benchmark::Request req;
-    req.maxTime = 60.0;
+    req.maxTime = 120.0;
     req.maxMem = 10000.0;
-    req.runCount = 50;
+    req.runCount = 1;
     req.displayProgress = true;
     b.benchmark(req);
 

@@ -1,0 +1,468 @@
+Info:    Beginning benchmark
+Info:    No planner specified. Using default.
+Info:    KPIECE1: Attempting to use default projection.
+Info:    Preparing for run 0 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2482 states
+Info:    Preparing for run 1 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2990 states
+Info:    Preparing for run 2 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 12716 states
+Info:    Preparing for run 3 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1201 states
+Info:    Preparing for run 4 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1879 states
+Info:    Preparing for run 5 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2401 states
+Info:    Preparing for run 6 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 12748 states
+Info:    Preparing for run 7 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 4671 states
+Info:    Preparing for run 8 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 9884 states
+Info:    Preparing for run 9 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3036 states
+Info:    Preparing for run 10 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3642 states
+Info:    Preparing for run 11 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 828 states
+Info:    Preparing for run 12 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3605 states
+Info:    Preparing for run 13 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3417 states
+Info:    Preparing for run 14 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 4058 states
+Info:    Preparing for run 15 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 143 states
+Info:    Preparing for run 16 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2517 states
+Info:    Preparing for run 17 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1434 states
+Info:    Preparing for run 18 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 6084 states
+Info:    Preparing for run 19 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2949 states
+Info:    Preparing for run 20 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 4415 states
+Info:    Preparing for run 21 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 6071 states
+Info:    Preparing for run 22 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1366 states
+Info:    Preparing for run 23 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 5636 states
+Info:    Preparing for run 24 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1412 states
+Info:    Preparing for run 25 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2225 states
+Info:    Preparing for run 26 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 4624 states
+Info:    Preparing for run 27 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 10145 states
+Info:    Preparing for run 28 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1927 states
+Info:    Preparing for run 29 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 7680 states
+Info:    Preparing for run 30 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1597 states
+Info:    Preparing for run 31 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 13531 states
+Info:    Preparing for run 32 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 4460 states
+Info:    Preparing for run 33 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2212 states
+Info:    Preparing for run 34 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3412 states
+Info:    Preparing for run 35 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 2980 states
+Info:    Preparing for run 36 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 9569 states
+Info:    Preparing for run 37 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 15566 states
+Info:    Preparing for run 38 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 369 states
+Info:    Preparing for run 39 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3319 states
+Info:    Preparing for run 40 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1666 states
+Info:    Preparing for run 41 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1448 states
+Info:    Preparing for run 42 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 12860 states
+Info:    Preparing for run 43 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3597 states
+Info:    Preparing for run 44 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 25519 states
+Info:    Preparing for run 45 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 3699 states
+Info:    Preparing for run 46 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 456 states
+Info:    Preparing for run 47 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 7077 states
+Info:    Preparing for run 48 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 15278 states
+Info:    Preparing for run 49 of control_RRT
+Info:    RRT: Starting planning with 1 states already in datastructure
+Info:    RRT: Created 1433 states
+Info:    Preparing for run 0 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 776 states in 145 cells (99 internal + 46 external)
+Info:    Preparing for run 1 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 900 states in 156 cells (110 internal + 46 external)
+Info:    Preparing for run 2 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1933 states in 165 cells (115 internal + 50 external)
+Info:    Preparing for run 3 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 3862 states in 172 cells (123 internal + 49 external)
+Info:    Preparing for run 4 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1446 states in 165 cells (117 internal + 48 external)
+Info:    Preparing for run 5 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 11918 states in 179 cells (129 internal + 50 external)
+Info:    Preparing for run 6 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 2403 states in 166 cells (117 internal + 49 external)
+Info:    Preparing for run 7 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4369 states in 173 cells (124 internal + 49 external)
+Info:    Preparing for run 8 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1155 states in 157 cells (108 internal + 49 external)
+Info:    Preparing for run 9 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 5459 states in 174 cells (124 internal + 50 external)
+Info:    Preparing for run 10 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 766 states in 153 cells (106 internal + 47 external)
+Info:    Preparing for run 11 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4901 states in 175 cells (126 internal + 49 external)
+Info:    Preparing for run 12 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4356 states in 176 cells (126 internal + 50 external)
+Info:    Preparing for run 13 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 687 states in 158 cells (107 internal + 51 external)
+Info:    Preparing for run 14 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4839 states in 174 cells (124 internal + 50 external)
+Info:    Preparing for run 15 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 8663 states in 177 cells (127 internal + 50 external)
+Info:    Preparing for run 16 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1656 states in 166 cells (116 internal + 50 external)
+Info:    Preparing for run 17 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 7046 states in 177 cells (128 internal + 49 external)
+Info:    Preparing for run 18 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 742 states in 141 cells (93 internal + 48 external)
+Info:    Preparing for run 19 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1351 states in 158 cells (111 internal + 47 external)
+Info:    Preparing for run 20 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4104 states in 175 cells (126 internal + 49 external)
+Info:    Preparing for run 21 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 9622 states in 178 cells (128 internal + 50 external)
+Info:    Preparing for run 22 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 519 states in 130 cells (76 internal + 54 external)
+Info:    Preparing for run 23 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 7829 states in 176 cells (126 internal + 50 external)
+Info:    Preparing for run 24 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1279 states in 158 cells (109 internal + 49 external)
+Info:    Preparing for run 25 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4241 states in 171 cells (122 internal + 49 external)
+Info:    Preparing for run 26 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1114 states in 155 cells (108 internal + 47 external)
+Info:    Preparing for run 27 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 4601 states in 175 cells (126 internal + 49 external)
+Info:    Preparing for run 28 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 844 states in 156 cells (107 internal + 49 external)
+Info:    Preparing for run 29 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 534 states in 145 cells (97 internal + 48 external)
+Info:    Preparing for run 30 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 5425 states in 176 cells (127 internal + 49 external)
+Info:    Preparing for run 31 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 2438 states in 173 cells (123 internal + 50 external)
+Info:    Preparing for run 32 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 503 states in 147 cells (95 internal + 52 external)
+Info:    Preparing for run 33 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1074 states in 161 cells (112 internal + 49 external)
+Info:    Preparing for run 34 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 5168 states in 174 cells (125 internal + 49 external)
+Info:    Preparing for run 35 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1981 states in 169 cells (121 internal + 48 external)
+Info:    Preparing for run 36 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1744 states in 165 cells (117 internal + 48 external)
+Info:    Preparing for run 37 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 292 states in 105 cells (45 internal + 60 external)
+Info:    Preparing for run 38 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 791 states in 144 cells (97 internal + 47 external)
+Info:    Preparing for run 39 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 5179 states in 176 cells (126 internal + 50 external)
+Info:    Preparing for run 40 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 648 states in 153 cells (106 internal + 47 external)
+Info:    Preparing for run 41 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 1224 states in 162 cells (113 internal + 49 external)
+Info:    Preparing for run 42 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 14727 states in 180 cells (130 internal + 50 external)
+Info:    Preparing for run 43 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 2804 states in 170 cells (121 internal + 49 external)
+Info:    Preparing for run 44 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 7330 states in 177 cells (128 internal + 49 external)
+Info:    Preparing for run 45 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 396 states in 128 cells (64 internal + 64 external)
+Info:    Preparing for run 46 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Debug:   KPIECE1: Numerical precision limit reached. Resetting costs.
+Info:    KPIECE1: Created 7136 states in 173 cells (123 internal + 50 external)
+Info:    Preparing for run 47 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 493 states in 135 cells (85 internal + 50 external)
+Info:    Preparing for run 48 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 281 states in 111 cells (59 internal + 52 external)
+Info:    Preparing for run 49 of control_KPIECE1
+Info:    KPIECE1: Starting planning with 1 states already in datastructure
+Info:    KPIECE1: Created 957 states in 149 cells (101 internal + 48 external)
+Info:    Preparing for run 0 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 1 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 2 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 3 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 4 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 5 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 6 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 7 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 8 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 9 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 10 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 11 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 12 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 13 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 14 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 15 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 16 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 17 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 18 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 19 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 20 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 21 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 22 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 23 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 24 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 25 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 26 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 27 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 28 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 29 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 30 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 31 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 32 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 33 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 34 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 35 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 36 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 37 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 38 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 39 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 40 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 41 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 42 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 43 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 44 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 45 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 46 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 47 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 48 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Preparing for run 49 of control_RGRRT
+Info:    RGRRT: Starting planning with 1 states already in datastructure
+Info:    RGRRT: Created 1 states
+Info:    Benchmark complete
