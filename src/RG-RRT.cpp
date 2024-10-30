@@ -34,26 +34,6 @@ void ompl::control::RGRRT::setup()
     if (!nn_)
         nn_.reset(tools::SelfConfig::getDefaultNearestNeighbors<Motion *>(this));
     nn_->setDistanceFunction([this](const Motion *a, const Motion *b) { return distanceFunction(a, b); });
-
-    // Assuming that the control space is a RealVectorControlSpace with bounds
-    ompl::base::RealVectorBounds cbounds = siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getBounds();
-
-    
-    // Allocate controls for R_control_:
-    // We assume only only the first control will be used for reachability
-    // For the pendulum problem, this would be torque
-    // For the car problem, this would be the angular velocity
-    double step = (cbounds.high[0] - cbounds.low[0]) / 10;
-    for (int i = 0; i < 11; i++) {
-        ompl::control::Control *control = siC_->allocControl();
-        auto *controltype = control->as<ompl::control::RealVectorControlSpace::ControlType>();
-        for (unsigned int j = 1; j < siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getDimension(); j++) {
-            controltype->values[j] = 0;
-        }
-        controltype->values[0] = cbounds.low[0] + i*step;
-        R_control_.push_back(control);
-    }
-    
 }
 
 void ompl::control::RGRRT::clear()
@@ -61,8 +41,6 @@ void ompl::control::RGRRT::clear()
     Planner::clear();
     sampler_.reset();
     controlSampler_.reset();
-    // Clear R_control_ vector
-    R_control_.clear();
     freeMemory();
     if (nn_)
         nn_->clear();
@@ -84,13 +62,6 @@ void ompl::control::RGRRT::freeMemory()
             delete motion;
         }
     }
-
-    // Free R_control_ vector memory
-    for (auto control : R_control_) {
-        siC_->freeControl(control);
-    }
-
-    std::vector<Control *>().swap(R_control_);
 }
 
 ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTerminationCondition &ptc)
@@ -141,6 +112,23 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
     Control *rctrl = rmotion->control;
     base::State *xstate = si_->allocState();
 
+    // Setup for computing RG(q)
+    auto *rgmotion = new Motion(siC_);
+    ompl::base::RealVectorBounds cbounds = siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getBounds();
+    ompl::control::Control *control = siC_->allocControl();
+
+    // Step between each control value in the reachability set
+    double step = (cbounds.high[0] - cbounds.low[0]) / 10;
+
+    // Assuming that the control space is a RealVectorControlSpace with bounds
+    auto *controltype = control->as<ompl::control::RealVectorControlSpace::ControlType>();
+
+    // We assume only only the first control will be used for reachability
+    // Set other control variables to 0.
+    for (unsigned int j = 1; j < siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getDimension(); j++) {
+        controltype->values[j] = 0;
+    }
+
     while (!ptc)
     {
         /* sample random state (with goal biasing) */
@@ -155,9 +143,14 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
         /* Calculate R(q_near) and find if a state in R(q_near) is closer to the random state than q_near*/
         double dist = distanceFunction(nmotion, rmotion);
         bool isReachable = false;
-        for(ompl::control::Control *control : R_control_) {
-            auto *rgmotion = new Motion(siC_);
-            siC_->propagate(nmotion->state, control, t_, rgmotion->state);
+        for (int i = 0; i < 11; i++) {
+            // We assume only only the first control will be used for reachability
+            // For the pendulum problem, this would be torque
+            // For the car problem, this would be the angular velocity
+            controltype->values[0] = cbounds.low[0] + i*step;
+
+            siC_->propagate(nmotion->state, control, t_, nmotion->R_states[i]);
+            rgmotion->state = nmotion->R_states[i];
             if (dist > distanceFunction(rgmotion, rmotion)) {
                 /* A state in R(q_near) is found to be closer to the random state than q_near.
                    We add q_near to the tree.
@@ -287,7 +280,10 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
         si_->freeState(rmotion->state);
     if (rmotion->control)
         siC_->freeControl(rmotion->control);
+    if (rgmotion->state)
+        si_->freeState(rgmotion->state);
     delete rmotion;
+    delete rgmotion;
     si_->freeState(xstate);
 
     OMPL_INFORM("%s: Created %u states", getName().c_str(), nn_->size());
