@@ -91,6 +91,10 @@ namespace ompl
                 Motion(const SpaceInformation *si)
                   : state(si->allocState()), control(si->allocControl())
                 {
+                    R_states = new base::State *[11];
+                    for (int i = 0; i < 11; i++) {
+                        R_states[i] = si->allocState();
+                    }
                 }
 
                 ~Motion() = default;
@@ -106,6 +110,8 @@ namespace ompl
 
                 /** \brief The parent motion in the exploration tree */
                 Motion *parent{nullptr};
+
+                base::State **R_states{nullptr};
             };
 
             /** \brief Free the memory allocated by this planner */
@@ -141,9 +147,6 @@ namespace ompl
 
             /** \brief The most recent goal motion.  Used for PlannerData computation */
             Motion *lastGoalMotion_{nullptr};
-
-            /** \brief List of controls used to approximate R(q) */
-            std::vector<Control *> R_control_;
 
             /** \brief Time duration to propagate R(q) */
             int t_{1};
