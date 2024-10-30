@@ -11,14 +11,12 @@
 #include <limits>
 
 #include <ompl/control/spaces/RealVectorControlSpace.h>
+#include <ompl/base/spaces/RealVectorStateSpace.h>
 
 ompl::control::RGRRT::RGRRT(const SpaceInformationPtr &si) : base::Planner(si, "RGRRT")
 {
     specs_.approximateSolutions = true;
     siC_ = si.get();
-
-    // Initialize R_control_
-    R_control_ = std::vector<Control *>(11);
 
     Planner::declareParam<double>("goal_bias", this, &RGRRT::setGoalBias, &RGRRT::getGoalBias, "0.:.05:1.");
     Planner::declareParam<bool>("intermediate_states", this, &RGRRT::setIntermediateStates, &RGRRT::getIntermediateStates,
@@ -40,14 +38,19 @@ void ompl::control::RGRRT::setup()
     // Assuming that the control space is a RealVectorControlSpace with bounds
     ompl::base::RealVectorBounds cbounds = siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getBounds();
 
-    // Create a step vector that
-    std::vector<double> step (cbounds.low.size());
-    std::transform(cbounds.high.begin(), cbounds.high.end(), cbounds.low.begin(), step.begin(), [](double a, double b){ return (a-b) / 10;});
-    // Allocate controls for R_control_
+    
+    // Allocate controls for R_control_:
+    // We assume only only the first control will be used for reachability
+    // For the pendulum problem, this would be torque
+    // For the car problem, this would be the angular velocity
+    double step = (cbounds.high[0] - cbounds.low[0]) / 10;
     for (int i = 0; i < 11; i++) {
         ompl::control::Control *control = siC_->allocControl();
-        std::vector<double> control_values = cbounds.low;
-        std::transform(cbounds.low.begin(), cbounds.low.end(), step.begin(), control->as<ompl::control::RealVectorControlSpace::ControlType>()->values, [i](double a, double b){return a+i*b;});
+        auto *controltype = control->as<ompl::control::RealVectorControlSpace::ControlType>();
+        for (unsigned int j = 1; j < siC_->getControlSpace()->as<ompl::control::RealVectorControlSpace>()->getDimension(); j++) {
+            controltype->values[j] = 0;
+        }
+        controltype->values[0] = cbounds.low[0] + i*step;
         R_control_.push_back(control);
     }
     
@@ -152,12 +155,9 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
         /* Calculate R(q_near) and find if a state in R(q_near) is closer to the random state than q_near*/
         double dist = distanceFunction(nmotion, rmotion);
         bool isReachable = false;
-        for(const ompl::control::Control *control : R_control_) {
-
+        for(ompl::control::Control *control : R_control_) {
             auto *rgmotion = new Motion(siC_);
             siC_->propagate(nmotion->state, control, t_, rgmotion->state);
-
-             
             if (dist > distanceFunction(rgmotion, rmotion)) {
                 /* A state in R(q_near) is found to be closer to the random state than q_near.
                    We add q_near to the tree.

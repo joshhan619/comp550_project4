@@ -229,7 +229,7 @@ void planCar(ompl::control::SimpleSetupPtr & ss , int choice )
     }
     ss->setPlanner(planner);
     ss->setup();
-    ob::PlannerStatus solved = ss->solve(60);
+    ob::PlannerStatus solved = ss->solve(120);
 
     if (solved && ss->getSolutionPath().getStateCount() > 0) {
         ss->getSolutionPath().print(std::cout);
