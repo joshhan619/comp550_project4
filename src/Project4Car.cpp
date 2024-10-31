@@ -15,6 +15,7 @@
 #include <ompl/control/spaces/RealVectorControlSpace.h>
 #include <ompl/base/spaces/RealVectorStateSpace.h>
 
+#include <ompl/tools/benchmark/Benchmark.h>
 // The collision checker routines
 #include "CollisionChecking.h"
 
@@ -236,9 +237,27 @@ void planCar(ompl::control::SimpleSetupPtr & ss , int choice )
     }
 }
 
-void benchmarkCar(ompl::control::SimpleSetupPtr &/* ss */)
+void benchmarkCar(ompl::control::SimpleSetupPtr & ss )
 {
     // TODO: Do some benchmarking for the car
+    ompl::tools::Benchmark b(*ss, "Project 4b Car");
+
+    ob::StateSpace *space = ss->getStateSpace().get();
+    space->registerDefaultProjection(ob::ProjectionEvaluatorPtr(new CarProjection(space)));
+    // Add benchmark planners
+    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
+    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RGRRT>(ss->getSpaceInformation())));
+    // Create a benchmark request
+    ompl::tools::Benchmark::Request req;
+    req.maxTime = 120.0;
+    req.maxMem = 10000.0;
+    req.runCount = 3;
+    req.displayProgress = true;
+    b.benchmark(req);
+
+    b.saveResultsToFile("car_benchmarking.log");
+
 }
 
 int main(int /* argc */, char ** /* argv */)
