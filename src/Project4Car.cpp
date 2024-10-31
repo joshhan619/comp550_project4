@@ -245,8 +245,8 @@ void benchmarkCar(ompl::control::SimpleSetupPtr & ss )
     ob::StateSpace *space = ss->getStateSpace().get();
     space->registerDefaultProjection(ob::ProjectionEvaluatorPtr(new CarProjection(space)));
     // Add benchmark planners
-    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
-    //b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RRT>(ss->getSpaceInformation())));
+    b.addPlanner(ob::PlannerPtr(std::make_shared<oc::KPIECE1>(ss->getSpaceInformation())));
     b.addPlanner(ob::PlannerPtr(std::make_shared<oc::RGRRT>(ss->getSpaceInformation())));
     // Create a benchmark request
     ompl::tools::Benchmark::Request req;
