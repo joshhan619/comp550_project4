@@ -59,6 +59,13 @@ void ompl::control::RGRRT::freeMemory()
                 si_->freeState(motion->state);
             if (motion->control)
                 siC_->freeControl(motion->control);
+            
+            for (int i = 0; i < 11; i++) {
+                if (motion->R_states[i]) {
+                    si_->freeState(motion->R_states[i]);
+                }
+            }
+                
             delete motion;
         }
     }
@@ -150,7 +157,7 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
             controltype->values[0] = cbounds.low[0] + i*step;
 
             siC_->propagate(nmotion->state, control, t_, nmotion->R_states[i]);
-            rgmotion->state = nmotion->R_states[i];
+            si_->copyState(rgmotion->state, nmotion->R_states[i]);
             if (dist > distanceFunction(rgmotion, rmotion)) {
                 /* A state in R(q_near) is found to be closer to the random state than q_near.
                    We add q_near to the tree.
@@ -280,11 +287,26 @@ ompl::base::PlannerStatus ompl::control::RGRRT::solve(const base::PlannerTermina
         si_->freeState(rmotion->state);
     if (rmotion->control)
         siC_->freeControl(rmotion->control);
+
+    for (int i = 0; i < 11; i++) {
+        if (rmotion->R_states[i]) {
+            si_->freeState(rmotion->R_states[i]);
+        }
+    }  
     if (rgmotion->state)
         si_->freeState(rgmotion->state);
+    if (rgmotion->control)
+        siC_->freeControl(rgmotion->control);
+
+    for (int i = 0; i < 11; i++) {
+        if (rgmotion->R_states[i]) {
+            si_->freeState(rgmotion->R_states[i]);
+        }
+    }
     delete rmotion;
     delete rgmotion;
     si_->freeState(xstate);
+    siC_->freeControl(control);
 
     OMPL_INFORM("%s: Created %u states", getName().c_str(), nn_->size());
 

@@ -1,7 +1,7 @@
 ///////////////////////////////////////
 // COMP/ELEC/MECH 450/550
 // Project 4
-// Authors: FILL ME OUT!!
+// Authors: Joshua Han, Alan Huang
 //////////////////////////////////////
 
 #include <iostream>
@@ -188,7 +188,7 @@ ompl::control::SimpleSetupPtr createCar(std::vector<Rectangle> &  obstacles)
 
 
     // Add state propagator
-    oc::ODESolverPtr odeSolver (new oc::ODEBasicSolver<> (ss->getSpaceInformation(), &carODE));
+    oc::ODESolverPtr odeSolver (std::make_shared<oc::ODEBasicSolver<>>(ss->getSpaceInformation(), &carODE));
     si->setStatePropagator(oc::ODESolver::getStatePropagator(odeSolver, &postPropagate));
 
     ob::ScopedState<ob::CompoundStateSpace> start(space);
@@ -252,7 +252,7 @@ void benchmarkCar(ompl::control::SimpleSetupPtr & ss )
     ompl::tools::Benchmark::Request req;
     req.maxTime = 120.0;
     req.maxMem = 10000.0;
-    req.runCount = 3;
+    req.runCount = 50;
     req.displayProgress = true;
     b.benchmark(req);
 

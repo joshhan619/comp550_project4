@@ -1,7 +1,7 @@
 ///////////////////////////////////////
 // COMP/ELEC/MECH 450/550
 // Project 4
-// Authors: FILL ME OUT!!
+// Authors: Joshua Han, Alan Huang
 //////////////////////////////////////
 
 #include <iostream>
@@ -69,8 +69,8 @@ ompl::control::SimpleSetupPtr createPendulum(double torque)
     // planning.
     // Create pendulum's state space
     auto space (std::make_shared<ob::CompoundStateSpace>());
-    space->addSubspace(ob::StateSpacePtr(new ob::SO2StateSpace()), 1);
-    space->addSubspace(ob::StateSpacePtr(new ob::RealVectorStateSpace(1)), 1);
+    space->addSubspace(std::make_shared<ob::SO2StateSpace>(), 1);
+    space->addSubspace(std::make_shared<ob::RealVectorStateSpace>(1), 1);
 
     ob::RealVectorBounds bounds(1);
     bounds.setLow(-10);
@@ -96,7 +96,7 @@ ompl::control::SimpleSetupPtr createPendulum(double torque)
     });
 
     // Add state propagator
-    oc::ODESolverPtr odeSolver (new oc::ODEBasicSolver<> (ss->getSpaceInformation(), &pendulumODE));
+    oc::ODESolverPtr odeSolver (std::make_shared<oc::ODEBasicSolver<>> (ss->getSpaceInformation(), &pendulumODE));
     si->setStatePropagator(oc::ODESolver::getStatePropagator(odeSolver, &postPropagate));
 
     ob::ScopedState<ob::CompoundStateSpace> start(space);
@@ -156,7 +156,7 @@ void benchmarkPendulum(ompl::control::SimpleSetupPtr & ss )
     ompl::tools::Benchmark::Request req;
     req.maxTime = 120.0;
     req.maxMem = 10000.0;
-    req.runCount = 1;
+    req.runCount = 2;
     req.displayProgress = true;
     b.benchmark(req);
 

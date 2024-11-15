@@ -91,7 +91,6 @@ namespace ompl
                 Motion(const SpaceInformation *si)
                   : state(si->allocState()), control(si->allocControl())
                 {
-                    R_states = new base::State *[11];
                     for (int i = 0; i < 11; i++) {
                         R_states[i] = si->allocState();
                     }
@@ -111,7 +110,7 @@ namespace ompl
                 /** \brief The parent motion in the exploration tree */
                 Motion *parent{nullptr};
 
-                base::State **R_states{nullptr};
+                std::array<base::State*, 11> R_states;
             };
 
             /** \brief Free the memory allocated by this planner */
